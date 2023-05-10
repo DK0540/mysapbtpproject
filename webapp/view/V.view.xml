@@ -1,0 +1,122 @@
+<mvc:View xmlns:form="sap.ui.layout.form"
+	controllerName="com.example.wizardapp.controller.C"
+	xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form"
+	xmlns="sap.m">
+	<ObjectHeader
+		binding="{/RESPONSE/1}"
+		title="Provide Logistics Info"
+		
+		class="sapUiResponsivePadding--header" >
+		<statuses>
+		<ObjectAttribute text="Purchase Order:{PURCHASE_ORDER_NO}" />
+			<ObjectStatus
+				title="Delivery Location Reffers to"
+				text="{INCOTERMS_DEL_LOC}"
+				state="Success" />
+				<ObjectStatus
+				title="Incoterms/price basis"
+				/>
+		</statuses>
+		
+		<ObjectAttribute text="Purchase Order:{PURCHASE_ORDER_NO}" />
+		<ObjectAttribute text="Incoterms:{INCOTERMS}" />
+						
+		<ObjectAttribute text="{Description}" />
+		
+	</ObjectHeader>
+	<Panel width="auto" class="sapUiResponsiveMargin">
+		<headerToolbar>
+			<OverflowToolbar>
+				<Title text="Shipping Details"/>
+				</OverflowToolbar>
+        </headerToolbar>
+		   <f:SimpleForm  minWidth="1024"
+				maxContainerCols="2" editable="true" layout="ResponsiveGridLayout"
+				 labelSpanL="4" labelSpanM="4"
+				emptySpanL="0" emptySpanM="0" columnsL="2" columnsM="2"
+				validateFieldGroup="onValidateFieldGroup">
+					<core:Title text="" />
+					<Label text="Manufacturing date"/>
+					<DatePicker
+					    fieldGroupIds="Billing Information"
+						id="DP3"
+						displayFormat="short"/>
+					  <Label text="Tracking Number"/>
+					  <Input/>
+				<core:Title text=""  />
+				<Label text="Carrier"/>
+					  <Input fieldGroupIds="Discount Code"/>
+					  <Label text="Country Of Origin"/>
+					  <Input fieldGroupIds="Discount Code"/>
+					 
+					</f:SimpleForm>
+				</Panel>
+
+				 <Panel  width="auto" class="sapUiResponsiveMargin">
+					  <headerToolbar>
+			      <OverflowToolbar>
+				<Title text="Product Data"/>
+				</OverflowToolbar>
+              </headerToolbar>
+			  	<Table id="idProductsTablelast"
+		inset="false"
+		items="{path: '/RESPONSE'}">
+		
+		<columns>
+			<Column
+				width="12em">
+				<Text text="Product" />
+			</Column>
+			<Column
+				demandPopin="true">
+				<Text text="Supplier" />
+			</Column>
+            <Column
+				demandPopin="true">
+				<Text text="To be shipped" />
+			</Column>
+            <Column
+				demandPopin="true">
+				<Text text="Mfg Date" />
+			</Column>
+			<Column
+				demandPopin="true">
+				<Text text="Vendor Batch" />
+			</Column>
+			     <Column
+				demandPopin="true">
+				<Text text="Material Number" />
+			</Column>
+            <Column
+				demandPopin="true">
+				<Text text="Material Description" />
+			</Column>
+			</columns>
+		<items>
+			<ColumnListItem vAlign="Middle">
+				<cells>
+					<ObjectIdentifier
+						title="{LINE_ITEMS/0/PURCHASE_ORDER_ITEM_NO}"
+						text=""/>
+					<Text
+						text="{LINE_ITEMS/0/OPEN_QTY}PCS" />
+					<Text
+						text="{LINE_ITEMS/0/SN_ASSIGNED}Serial Number" />
+                   
+						<Input/> 
+                    <Text
+					 />    
+						 <Text
+							text="{LINE_ITEMS/0/MATERIAL_NO}" />    
+						 <Text
+						text="{LINE_ITEMS/0/MATERIAL_DESC}" />     
+					</cells>
+                
+			</ColumnListItem>
+           
+		</items>
+	</Table>
+					  </Panel>
+</mvc:View>

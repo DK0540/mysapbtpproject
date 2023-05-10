@@ -1,0 +1,17 @@
+<mvc:View controllerName="com.example.wizardapp.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+       <content>
+       <mvc:XMLView viewName="com.example.wizardapp.view.WizardCurrentStep"/>
+    
+       <!-- This is view nested Acceptable comments-->
+						<!-- <mvc:XMLView viewName="com.example.wizardapp.view.Selectitems"/>
+                         <mvc:XMLView viewName="com.example.wizardapp.view.SelectSerialnum"/>
+                         <mvc:XMLView viewName="com.example.wizardapp.view.V"/> -->
+					</content>
+    </Page>
+</mvc:View>
+
+<!-- 
+	<mvc:XMLView viewName="com.example.wizardapp.view.Selectitems"/> -->

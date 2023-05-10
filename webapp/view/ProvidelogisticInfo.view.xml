@@ -1,0 +1,78 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+	<Page>
+   <!-- provide Logistic Info -->
+   
+    <Panel class="sapUiTinyMarginTop"
+   height="300px">
+   <headerToolbar>
+				<Toolbar>
+					<Title level="H3" text="Provide Logistic Info" />
+					<ToolbarSpacer />
+				</Toolbar>
+			</headerToolbar>
+ <content>
+<!-- <mvc:XMLView viewName="com.example.pagelayout.view.SelectSerialNumber"/> -->
+<HBox>
+<VBox class="sapUiSmallMargin">
+		<Text text="Purchase Order: 30120104040" />	<Text text="Inco Iterms: FCA" />
+	</VBox>
+
+	<VBox class="sapUiSmallMargin">
+		<Text text="Delivery Location refferring  to/Price Bases:  SELLERS PREMISE" />
+	</VBox>
+</HBox>
+		 </content>
+				<Toolbar>
+					<Title level="H3" text="Shipping Details" />
+					<ToolbarSpacer />
+				</Toolbar>
+				<content>
+				
+				<HBox>
+				<VBox>
+				<HBox>
+					<Label text="Shipping Date" labelFor="DTI1"/>
+		<DateTimeInput
+			id="DTI1"
+			type="Date"
+			placeholder="yyyy-MM-dd"
+			class="sapUiSmallMarginBottom" 
+			width="200px"
+			/>
+			</HBox>
+			<HBox>
+				<Label text="Tracking Number * :" />
+			<MaskInput mask="~~~~~~~~~~" placeholderSymbol="_" placeholder="">
+					<rules>
+						<MaskInputRule maskFormatSymbol="~" regex="[^_]"/>
+					</rules>
+				</MaskInput>
+				</HBox>
+</VBox>
+      <VBox>
+	  <HBox>
+				<Label text="Carrier :" />
+			<MaskInput mask="~~~~~~~~~~" placeholderSymbol="_" placeholder="">
+					<rules>
+						<MaskInputRule maskFormatSymbol="~" regex="[^_]"/>
+					</rules>
+				</MaskInput>
+ </HBox>
+  <HBox>
+				<Label text="Country of Origin" />
+			<MaskInput mask="~~~~~~~~~~" placeholderSymbol="_" placeholder="">
+					<rules>
+						<MaskInputRule maskFormatSymbol="~" regex="[^_]"/>
+					</rules>
+				</MaskInput>
+				 </HBox>
+ </VBox>
+		</HBox>
+				</content>
+			
+   </Panel>	
+  
+	</Page>
+</mvc:View>
